@@ -23,99 +23,48 @@
       text-decoration: none;
       font-weight: 500;
     }
-    .about {
+    h2 {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 2rem;
+    }
+    .section {
+      padding: 2rem 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 3rem 1rem;
-      background-color: #fff;
-      text-align: center;
     }
-    .about img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .about h2 {
-      margin-bottom: 0.5rem;
-    }
-    .about p {
-      max-width: 800px;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 2rem;
-    }
-    h2 {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .trapezoid-container {
+      display: flex;
+      flex-direction: column;
       gap: 2rem;
-      margin-top: 2rem;
+      width: 100%;
+      max-width: 1200px;
+      align-items: center;
     }
-    .card {
-      perspective: 1000px;
-    }
-    .card-inner {
+    .trapezoid {
       position: relative;
-      width: 100%;
-      height: 300px;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-      cursor: pointer;
-    }
-    .card:hover .card-inner {
-      transform: rotateY(180deg);
-    }
-    .card-front, .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    .card-front {
+      width: 90%;
+      height: 200px;
       background: #000;
+      color: white;
+      clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
       font-size: 1.5rem;
       font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
     }
-    .card-front img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.25;
-      position: absolute;
-      z-index: 0;
-    }
-    .card-front span {
-      position: relative;
-      z-index: 1;
-    }
-    .card-back {
-      background: white;
-      color: #111;
+    .trapezoid.flip {
       transform: rotateY(180deg);
+    }
+    .trapezoid-content {
       padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
+      max-width: 90%;
     }
     footer {
       text-align: center;
@@ -126,6 +75,15 @@
       color: #777;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".trapezoid").forEach(el => {
+        el.addEventListener("click", () => {
+          el.classList.toggle("flip");
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -138,36 +96,34 @@
     </div>
   </header>
 
-  <section class="about">
-    <img src="thumbnail_IMG_9326.jpg" alt="Munzir Abdulmajid">
+  <section class="section">
     <h2>About Me</h2>
-    <p>
-      I am a Data Scientist at Jacobs with a strong focus on developing intelligent, scalable data solutions. My work leverages cutting-edge AI technologies to solve complex engineering and infrastructure challenges. I specialize in implementing Large Language Models, document automation, and data visualization across enterprise-level projects.
-      <br><br>
-      I hold a Master’s degree in Data Science from the University of Washington. My academic and research background includes the integration of physics-informed neural networks (PINNs) and sparse system identification (SINDy) for discovering interpretable models from noisy, limited data. I also led initiatives focused on accessible routing and urban mobility.
-      <br><br>
-      At Jacobs, I’ve contributed to major infrastructure efforts including NEOM, SoundTransit in Seattle, and the AMTRAK Frederick Douglass Tunnel. I have also designed AI-driven tools within Palantir Foundry and supported clients such as Intel, NYC Department of Design & Construction, and Singapore's National Water Agency.
-    </p>
+    <div class="trapezoid-container">
+      <div class="trapezoid"><div class="trapezoid-content">Summary: Data Scientist at Jacobs focused on AI-driven solutions for infrastructure and automation.</div></div>
+      <div class="trapezoid"><div class="trapezoid-content">Education: M.S. in Data Science from University of Washington.</div></div>
+      <div class="trapezoid"><div class="trapezoid-content">Skills: Python, Azure, Power BI, LLMs, Machine Learning, Data Visualization, Palantir, Docker, Kubernetes.</div></div>
+    </div>
   </section>
 
-  <div class="container">
+  <section class="section">
     <h2>Clients</h2>
-    <div class="card-grid">
-      <div class="card"><div class="card-inner"><div class="card-front"><span>NEOM</span></div><div class="card-back"><p>Saudi Arabia’s futuristic city where I developed 3D visualizations using Power BI and SIFT.</p></div></div></div>
-      <div class="card"><div class="card-inner"><div class="card-front"><span>AMTRAK</span></div><div class="card-back"><p>Built leadership dashboards for the Frederick Douglass Tunnel, enhancing project oversight.</p></div></div></div>
-      <div class="card"><div class="card-inner"><div class="card-front"><span>SoundTransit</span></div><div class="card-back"><p>Automated PDF data extraction with Azure AI Document Intelligence for Seattle transit projects.</p></div></div></div>
-      <div class="card"><div class="card-inner"><div class="card-front"><span>NYC DDC</span></div><div class="card-back"><p>Supported New York City’s Department of Design & Construction with AI-driven solutions.</p></div></div></div>
+    <div class="trapezoid-container">
+      <div class="trapezoid"><div class="trapezoid-content">NEOM</div></div>
+      <div class="trapezoid"><div class="trapezoid-content">AMTRAK</div></div>
+      <div class="trapezoid"><div class="trapezoid-content">SoundTransit</div></div>
+      <div class="trapezoid"><div class="trapezoid-content">NYC Department of Design and Construction</div></div>
     </div>
-  </div>
+  </section>
 
-  <div class="container">
+  <section class="section">
     <h2>Research & Initiatives</h2>
-    <div class="card-grid">
-      <div class="card"><div class="card-inner"><div class="card-front"><span>TASKAR</span></div><div class="card-back"><p>Contributed to AI-driven knowledge management systems within Jacobs' internal platform.</p></div></div></div>
-      <div class="card"><div class="card-inner"><div class="card-front"><span>Transformative Robotics Lab</span></div><div class="card-back"><p>Developed robotic arm designs with independent motion using 3D-printed U-joints.</p></div></div></div>
-      <div class="card"><div class="card-inner"><div class="card-front"><span>Physics-Informed ML</span></div><div class="card-back"><p>Integrated PINNs and SINDy to identify governing equations from sparse and noisy data.</p></div></div></div>
+    <div class="trapezoid-container">
+      <div class="trapezoid"><div class="trapezoid-content">The Taskar Center for Accessible Technology</div></div>
+      <div class="trapezoid"><div class="trapezoid-content">Transformative Robotics Lab</div></div>
+      <div class="trapezoid"><div class="trapezoid-content">Physics Informed Neural Networks</div></div>
+      <div class="trapezoid"><div class="trapezoid-content">Solar Chimney Power Plant</div></div>
     </div>
-  </div>
+  </section>
 
   <footer>
     &copy; 2025 Munzir Abdulmajid. All rights reserved.
