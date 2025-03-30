@@ -23,6 +23,29 @@
       text-decoration: none;
       font-weight: 500;
     }
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+      background-color: #fff;
+      text-align: center;
+    }
+    .about img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .about h2 {
+      margin-bottom: 0.5rem;
+    }
+    .about p {
+      max-width: 800px;
+      line-height: 1.6;
+    }
     .container {
       max-width: 1100px;
       margin: auto;
@@ -115,75 +138,22 @@
     </div>
   </header>
 
+  <section class="about">
+    <img src="thumbnail_IMG_9326.jpg" alt="Munzir Abdulmajid">
+    <h2>Hi there 👋 I'm Munzir</h2>
+    <p>
+      🚀 Data Scientist at Jacobs | 💡 Machine Learning Engineer and Researcher | 🌐 AI Enthusiast<br><br>
+      I’m passionate about transforming data into impactful solutions! At Jacobs, I use Azure OpenAI to drive data innovation on high-profile projects like NEOM, SoundTransit in Seattle, and the AMTRAK Frederick Douglass Tunnel. I also have experience building AI-driven tools and solutions using Foundry by Palantir, enabling smarter decision-making and efficient collaboration through our Alluvial platform.<br><br>
+      🔬 Background: Former researcher at UW (in the CSE and Mechanical Engineering Departments), where I developed advanced methods integrating physics-informed neural networks (PINNs) and sparse system identification (SINDy) to discover governing equations from limited, noisy data—pushing the boundaries of model discovery in complex systems. I also designed a 3D-printed U-joint robotic arm with independent motion capabilities and implemented a vaccine reservation system using Azure and Python. As a project coordinator, I led initiatives like AccessMap for accessible routing and OpenSideWalks to enhance urban mobility.<br><br>
+      💼 Clients: Intel, NEOM, AMTRAK, SoundTransit, NYC Department of Design & Construction, and Singapore's National Water Agency.<br><br>
+      📍 Let’s connect to chat about AI, data science, or anything tech!
+    </p>
+  </section>
+
   <div class="container">
     <h2>Projects</h2>
     <div class="card-grid">
-
-      <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://source.unsplash.com/featured/?ai" alt="AI" />
-            <span>AI with Azure OpenAI</span>
-          </div>
-          <div class="card-back">
-            <h3>AI with Azure OpenAI</h3>
-            <p>Built a RAG-based system that summarizes public comments and improves strategic decision-making using Azure OpenAI and advanced chunking methods.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://source.unsplash.com/featured/?data" alt="Palantir" />
-            <span>Palantir Project App</span>
-          </div>
-          <div class="card-back">
-            <h3>Palantir Project App</h3>
-            <p>Developed a project management app using LLMs within Foundry by Palantir to create predictive strategies and improve workflows.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://source.unsplash.com/featured/?pdf" alt="PDF" />
-            <span>Azure Document Intelligence</span>
-          </div>
-          <div class="card-back">
-            <h3>Azure Document Intelligence</h3>
-            <p>Automated data extraction from PDFs for SoundTransit infrastructure projects, boosting speed and accuracy in reporting.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://source.unsplash.com/featured/?dashboard" alt="Dashboard" />
-            <span>AMTRAK Leadership Dashboards</span>
-          </div>
-          <div class="card-back">
-            <h3>AMTRAK Leadership Dashboards</h3>
-            <p>Designed dashboards for the Frederick Douglass Tunnel project to support oversight, tracking, and performance.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://source.unsplash.com/featured/?3D" alt="NEOM" />
-            <span>3D Power BI for NEOM</span>
-          </div>
-          <div class="card-back">
-            <h3>3D Power BI for NEOM</h3>
-            <p>Integrated SIFT 3D Model Viewer in Power BI for Saudi Arabia’s NEOM project, enhancing stakeholder understanding.</p>
-          </div>
-        </div>
-      </div>
-
+      <!-- existing cards here -->
     </div>
   </div>
 
