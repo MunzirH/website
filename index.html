@@ -6,38 +6,85 @@
   <title>Munzir Abdulmajid | Data Scientist</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
       margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #1a1a1a;
-      color: #fff;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
-    .container {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      background: white;
-    }
-    h1, h2 {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #fefefe;
       color: #111;
     }
-    ul {
-      padding-left: 20px;
+    header {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 2rem;
     }
     .links a {
-      margin-right: 1rem;
-      color: #0077cc;
+      color: #007aff;
+      margin: 0 1rem;
       text-decoration: none;
+      font-weight: 500;
     }
-    .section {
-      margin-bottom: 2rem;
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      perspective: 1000px;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card-back {
+      background: white;
+      color: #111;
+      transform: rotateY(180deg);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem;
+      background-color: #fafafa;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
@@ -48,45 +95,79 @@
     <div class="links">
       <a href="https://www.linkedin.com/in/munzir-abdulmajid/" target="_blank">LinkedIn</a>
       <a href="https://github.com/MunzirH" target="_blank">GitHub</a>
-      <a href="Munzir_HA_Resume_2025.pdf" target="_blank">Resume (PDF)</a>
+      <a href="Munzir_HA_Resume_2025.pdf" target="_blank">Resume</a>
     </div>
   </header>
 
   <div class="container">
-    <div class="section">
-      <h2>About Me</h2>
-      <p>I’m a Data Scientist at Jacobs with a passion for turning data into actionable insights. My work spans infrastructure, AI, and cutting-edge automation in public and private sector projects. I’ve led data efforts on the Frederick Douglass Tunnel project and helped implement Generative AI at Jacobs.</p>
-    </div>
+    <h2>Projects</h2>
+    <div class="card-grid">
 
-    <div class="section">
-      <h2>Recent Achievements</h2>
-      <ul>
-        <li>Developed RAG-based AI system using Azure OpenAI for summarizing public comments.</li>
-        <li>Built project management app with Palantir Foundry and LLMs.</li>
-        <li>Automated PDF data extraction using Azure AI Document Intelligence for SoundTransit.</li>
-        <li>Created AMTRAK dashboards for performance tracking and strategy.</li>
-        <li>Integrated 3D model viewer with Power BI for NEOM project.</li>
-      </ul>
-    </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://source.unsplash.com/featured/?ai" alt="Azure OpenAI Project" />
+          </div>
+          <div class="card-back">
+            <h3>AI with Azure OpenAI</h3>
+            <p>Built a RAG-based system that summarizes public comments and improves strategic decision-making using Azure OpenAI and advanced chunking methods.</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="section">
-      <h2>Projects</h2>
-      <ul>
-        <li>Solar Chimney Optimization using CFD, ANNs, and ANFIS.</li>
-        <li>COVID-19 Vaccine Appointment System with Azure SQL + Python.</li>
-        <li>Physics-Informed Neural Networks (PINNs) for nonlinear dynamics at UW.</li>
-      </ul>
-    </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://source.unsplash.com/featured/?data" alt="Palantir Project" />
+          </div>
+          <div class="card-back">
+            <h3>Palantir Project App</h3>
+            <p>Developed a project management app using LLMs within Foundry by Palantir to create predictive strategies and improve workflows.</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="section">
-      <h2>Skills</h2>
-      <p>Python, Azure, Power BI, LLMs, Docker, Kubernetes, Git, SQL, R, PyTorch, TensorFlow, MATLAB, ML/DL/NLP, Data Visualization</p>
-    </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://source.unsplash.com/featured/?pdf" alt="Document Intelligence" />
+          </div>
+          <div class="card-back">
+            <h3>Azure Document Intelligence</h3>
+            <p>Automated data extraction from PDFs for SoundTransit infrastructure projects, boosting speed and accuracy in reporting.</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="section">
-      <h2>Contact</h2>
-      <p>Email: mu.unzir@gmail.com<br>Phone: +1 (206) 899-6615</p>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://source.unsplash.com/featured/?dashboard" alt="AMTRAK Dashboards" />
+          </div>
+          <div class="card-back">
+            <h3>AMTRAK Leadership Dashboards</h3>
+            <p>Designed dashboards for the Frederick Douglass Tunnel project to support oversight, tracking, and performance.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://source.unsplash.com/featured/?3D" alt="NEOM Power BI" />
+          </div>
+          <div class="card-back">
+            <h3>3D Power BI for NEOM</h3>
+            <p>Integrated SIFT 3D Model Viewer in Power BI for Saudi Arabia’s NEOM project, enhancing stakeholder understanding.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
+
+  <footer>
+    &copy; 2025 Munzir Abdulmajid. All rights reserved.
+  </footer>
 </body>
 </html>
